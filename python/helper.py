@@ -134,3 +134,31 @@ def get_current_holding(current_holding):
     )
 
     return position_df
+
+def get_stock_performace(stocks):
+    performance_df = pd.DataFrame()
+
+    for stock in stocks['items']:
+        profit = stock['totalProfitLoss']
+        info = stock['ticker']
+        symbol = info['symbol']
+        name = info['tinyName']
+
+        current_line = pd.Series([
+            name,
+            symbol,
+            profit
+        ])
+
+        performance_df = performance_df.append(
+            current_line, ignore_index=True)
+
+    performance_df = performance_df.rename(
+        columns={
+            0: 'Company',
+            1: 'Symbol',
+            2: 'Profit'
+        }
+    )
+
+    return performance_df

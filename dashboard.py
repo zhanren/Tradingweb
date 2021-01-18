@@ -116,6 +116,27 @@ app.layout = html.Div(
                     width={'size': 6, 'offset': 0},
                     children=[
                         dbc.Row(
+                            [
+                                dbc.Col(
+                                    [dbc.Card(
+                                        dbc_card('Top three picks All time',
+                                                 [
+                                                     html.H5('top 3 picks')
+                                                 ]
+                                                 ),
+                                    )
+                                    ]
+                                ),
+                                dbc.Col(
+                                    [dbc.Card(
+                                        dbc_card('Top three picks All time',
+                                                 [
+                                                     html.H5('top 3 picks this month')
+                                                 ]
+                                                 ),
+                                    )]),
+                            ]),
+                        dbc.Row(
                             dbc.Col(
                                 dbc.Card(
                                     dbc_card('My trading history',
@@ -173,10 +194,16 @@ def generate_yield_bar(return_type):
         ],
     )
 
+    # bar chart fig config
     fig.update_layout(
         yaxis={
             'tickformat': '.0%'
-        }),
+        },
+        width=400,
+        height=300,
+        paper_bgcolor='#000',
+        plot_bgcolor='#000'
+    ),
 
     return fig
 
@@ -256,10 +283,16 @@ def generate_yield_scatter(return_type):
         )
     ))
 
+    #portfolio return fig layout
     fig.update_layout(
         yaxis={
             'tickformat': '.0%'
-        })
+        },
+        width=400,
+        height=300,
+        paper_bgcolor='#000',
+        plot_bgcolor='#000'
+    )
 
     return fig
 
