@@ -84,8 +84,8 @@ app.layout = html.Div(
                 ),
                 dbc.Col(
                     dbc.Card(
-                        dbc_card('My Portfolio Return Bar',
-                                 [dcc.Graph(id='yield_rate_bar')]),
+                        dbc_card('My Portfolio Return Bar; bar_plot',
+                                 [dcc.Graph(id='yield_rate_bar', className='bar_plot')]),
                         color='primary',
                         outline=True),
                     width={'size': 4, 'offset': 1},
@@ -323,8 +323,8 @@ def get_main_graph(stock, start_date, end_date, asset_type):
                 )
             ))
 
-    fig.update_layout(width=1000,
-                      height=800),
+    fig.update_layout(width=800,
+                      height=600),
 
     fig.update_xaxes(rangebreaks=[
         dict(bounds=['sat', 'mon'])
