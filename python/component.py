@@ -1,5 +1,6 @@
 import dash_bootstrap_components as dbc
 
+dbc.themes
 
 def hovertemplate(trade):
     if trade['Stock/Option'] == 'STOCK':

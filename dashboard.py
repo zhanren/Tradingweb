@@ -22,8 +22,7 @@ current_holding = pd.read_csv('python/account_detail/current_holding.csv')
 current_holding_stock = current_holding[current_holding.AssetType == 'STOCK'][
     ['Company', 'Cost', 'Price', 'unrealizedProfitLossRate', 'positionProportion']]
 
-app = dash.Dash(__name__,
-                external_stylesheets=[dbc.themes.LUX])
+app = dash.Dash(__name__)
 
 main_drop_down = dbc.Select(
     id='stock_drop_down',
@@ -68,7 +67,7 @@ app.layout = html.Div(
         dbc.Row(
             dbc.Col(
                 html.H1(config.name, id='title'),
-                width={'size': 6, 'offset': 5},
+                width={'size': 11, 'offset': 1},
             )
         ),
         dbc.Row(
@@ -88,12 +87,12 @@ app.layout = html.Div(
                         dbc_card('My current position',
                                  [dbc.Table.from_dataframe(
                                      current_holding_stock, striped=True, bordered=True, hover=True, size='sm'),
-                                     dcc.Loading(dcc.Graph(id='position_pie_chart',
-                                                           className='pie_chart')),
+                                     dcc.Graph(id='position_pie_chart',
+                                               className='pie_chart'),
                                  ]
                                  ),
                     ),
-                    width={'size': 5, 'offset': 1},
+                    width={'size': 4, 'offset': 2},
                 )
             ]
         ),
@@ -273,8 +272,8 @@ def generate_yield_scatter(return_type):
         yaxis={
             'tickformat': '.0%'
         },
-        width=400,
-        height=300,
+        width=650,
+        height=400,
         paper_bgcolor='#000',
         plot_bgcolor='#000'
     )
