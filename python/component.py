@@ -35,3 +35,9 @@ def dbc_card(title, content):
     ]
 
     return card_content
+
+# dbc.Card(
+# dbc_card('My Portfolio Return Bar; bar_plot',
+# [dcc.Graph(id='yield_rate_bar', className='bar_plot')]),
+# color='primary',
+# outline=True),

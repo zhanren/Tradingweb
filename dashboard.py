@@ -84,58 +84,42 @@ app.layout = html.Div(
                 ),
                 dbc.Col(
                     dbc.Card(
-                        dbc_card('My Portfolio Return Bar; bar_plot',
-                                 [dcc.Graph(id='yield_rate_bar', className='bar_plot')]),
-                        color='primary',
-                        outline=True),
-                    width={'size': 4, 'offset': 1},
+                        dbc_card('My current position',
+                                 [dbc.Table.from_dataframe(
+                                     current_holding_stock, striped=True, bordered=True, hover=True, size='sm'),
+                                     dcc.Graph(id='position_pie_chart',
+                                               className='pie_chart'),
+                                 ]
+                                 ),
+                    ),
+                    width={'size': 5, 'offset': 1},
                 )
             ]
         ),
         dbc.Row(
             [dbc.Col(
-                width={'size': 5, 'offset': 1},
+                width={'size': 3, 'offset': 1},
                 children=[
                     dbc.Row(
-                        dbc.Col(
-                            dbc.Card(
-                                dbc_card('My current position',
-                                         [dbc.Table.from_dataframe(
-                                             current_holding_stock, striped=True, bordered=True, hover=True, size='sm'),
-                                             dcc.Graph(id='position_pie_chart',
-                                                       className='pie_chart'),
-                                         ]
-                                         ),
-                            ),
-                            width=12
-                        )
+                        dbc.Card(
+                            dbc_card('Top three picks All time',
+                                     [html.H5('top 3 picks')]
+                                     )))
+                    ,
+                    dbc.Row(
+                        dbc.Card(
+                            dbc_card('Top three picks this month',
+                                     [
+                                         html.H5('top 3 picks this month')
+                                     ]
+                                     )
+                        ),
                     )
                 ]
             ),
                 dbc.Col(
                     width={'size': 6, 'offset': 0},
                     children=[
-                        dbc.Row(
-                            [
-                                dbc.Col(
-                                    [dbc.Card(
-                                        dbc_card('Top three picks All time',
-                                                 [
-                                                     html.H5('top 3 picks')
-                                                 ]
-                                                 ),
-                                    )
-                                    ]
-                                ),
-                                dbc.Col(
-                                    [dbc.Card(
-                                        dbc_card('Top three picks All time',
-                                                 [
-                                                     html.H5('top 3 picks this month')
-                                                 ]
-                                                 ),
-                                    )]),
-                            ]),
                         dbc.Row(
                             dbc.Col(
                                 dbc.Card(
@@ -144,7 +128,7 @@ app.layout = html.Div(
                                                  main_drop_down,
                                                  asset_type_check_list,
                                                  calendar,
-                                                 dcc.Graph(id="main_graph", hoverData={})
+                                                 dcc.Loading(dcc.Graph(id="main_graph", hoverData={}))
                                              ]
                                              ),
                                 ),
@@ -158,54 +142,54 @@ app.layout = html.Div(
 )
 
 
-@app.callback(
-    Output('yield_rate_bar', 'figure'),
-    [Input('return_period_select', 'value')
-     ])
-def generate_yield_bar(return_type):
-    if return_type == 'Max':
-        date = '1900-01-01'
-    elif return_type == 'YTD':
-        date = str(today.year) + '-01-01'
-    elif return_type == 'MTD':
-        month = str(today.month)
-        if len(month) == 1:
-            month = '0' + month
-        date = str(today.year) + '-' + month + '-01'
-
-    yield_rate_df_temp = yield_rate_df[yield_rate_df.date >= date]
-
-    last_day = yield_rate_df_temp.iloc[-1]
-    first_day = yield_rate_df_temp.iloc[0]
-
-    my_portfolio_return = (last_day.yieldRate + 1) / (first_day.yieldRate + 1) - 1
-    dia_portfolio_return = (last_day.yield_rate_dia + 1) / (first_day.yield_rate_dia + 1) - 1
-    ixic_portfolio_return = (last_day.yield_rate_ixic + 1) / (first_day.yield_rate_ixic + 1) - 1
-    spy_portfolio_return = (last_day.yield_rate_spy + 1) / (first_day.yield_rate_spy + 1) - 1
-
-    name_list = ['My portfolio return', 'Dow&Jones return', 'Nasdaq return', 'S&P500 return']
-
-    fig = go.Figure(
-        data=[
-            go.Bar(
-                x=name_list,
-                y=[my_portfolio_return, dia_portfolio_return, ixic_portfolio_return, spy_portfolio_return]
-            )
-        ],
-    )
-
-    # bar chart fig config
-    fig.update_layout(
-        yaxis={
-            'tickformat': '.0%'
-        },
-        width=400,
-        height=300,
-        paper_bgcolor='#000',
-        plot_bgcolor='#000'
-    ),
-
-    return fig
+# @app.callback(
+#     Output('yield_rate_bar', 'figure'),
+#     [Input('return_period_select', 'value')
+#      ])
+# def generate_yield_bar(return_type):
+#     if return_type == 'Max':
+#         date = '1900-01-01'
+#     elif return_type == 'YTD':
+#         date = str(today.year) + '-01-01'
+#     elif return_type == 'MTD':
+#         month = str(today.month)
+#         if len(month) == 1:
+#             month = '0' + month
+#         date = str(today.year) + '-' + month + '-01'
+#
+#     yield_rate_df_temp = yield_rate_df[yield_rate_df.date >= date]
+#
+#     last_day = yield_rate_df_temp.iloc[-1]
+#     first_day = yield_rate_df_temp.iloc[0]
+#
+#     my_portfolio_return = (last_day.yieldRate + 1) / (first_day.yieldRate + 1) - 1
+#     dia_portfolio_return = (last_day.yield_rate_dia + 1) / (first_day.yield_rate_dia + 1) - 1
+#     ixic_portfolio_return = (last_day.yield_rate_ixic + 1) / (first_day.yield_rate_ixic + 1) - 1
+#     spy_portfolio_return = (last_day.yield_rate_spy + 1) / (first_day.yield_rate_spy + 1) - 1
+#
+#     name_list = ['My portfolio return', 'Dow&Jones return', 'Nasdaq return', 'S&P500 return']
+#
+#     fig = go.Figure(
+#         data=[
+#             go.Bar(
+#                 x=name_list,
+#                 y=[my_portfolio_return, dia_portfolio_return, ixic_portfolio_return, spy_portfolio_return]
+#             )
+#         ],
+#     )
+#
+#     # bar chart fig config
+#     fig.update_layout(
+#         yaxis={
+#             'tickformat': '.0%'
+#         },
+#         width=400,
+#         height=300,
+#         paper_bgcolor='#000',
+#         plot_bgcolor='#000'
+#     ),
+#
+#     return fig
 
 
 @app.callback(
