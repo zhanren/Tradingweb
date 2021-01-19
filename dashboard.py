@@ -76,7 +76,8 @@ app.layout = html.Div(
                 dbc.Col(
                     dbc.Card(
                         dbc_card('My Portfolio Return; selector;scatter_plot;'
-                                 , [return_period_type, dcc.Graph(id="yield_rate_scatter", className='scatter_plot')]),
+                                 , [return_period_type,
+                                    dcc.Loading(dcc.Graph(id="yield_rate_scatter", className='scatter_plot'))]),
                         color='primary',
                         outline=True
                     ),
