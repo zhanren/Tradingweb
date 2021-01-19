@@ -1,9 +1,8 @@
-import datetime
-
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+import datetime
 import pandas as pd
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
@@ -73,13 +72,8 @@ app.layout = html.Div(
         dbc.Row(
             children=[
                 dbc.Col(
-                    dbc.Card(
-                        dbc_card('My Portfolio Return; selector;scatter_plot;'
-                                 , [return_period_type,
-                                    dcc.Loading(dcc.Graph(id="yield_rate_scatter", className='scatter_plot'))]),
-                        color='primary',
-                        outline=True
-                    ),
+                    [return_period_type,
+                     dcc.Loading(dcc.Graph(id="yield_rate_scatter", className='scatter_plot'))],
                     width={'size': 4, 'offset': 1},
                 ),
                 dbc.Col(
