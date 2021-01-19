@@ -88,8 +88,8 @@ app.layout = html.Div(
                         dbc_card('My current position',
                                  [dbc.Table.from_dataframe(
                                      current_holding_stock, striped=True, bordered=True, hover=True, size='sm'),
-                                     dcc.Graph(id='position_pie_chart',
-                                               className='pie_chart'),
+                                     dcc.Loading(dcc.Graph(id='position_pie_chart',
+                                                           className='pie_chart')),
                                  ]
                                  ),
                     ),
