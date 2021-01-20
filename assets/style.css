@@ -598,6 +598,7 @@ pre code {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left:-15px;
+    margin-bottom:70px;
 }
 
 .no-gutters {
@@ -2034,7 +2035,8 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color:#fff
+    color:#fff;
+    margin-top:-70px;
 }
 
 .table th, .table td {
@@ -5068,6 +5070,14 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius:0.25rem;
     width:700px;
+}
+
+/* remove background */
+.offset-2 .card{
+    width:0;
+}
+.col-12 .card{
+    width:850px;
 }
 
 .card > hr {
@@ -11199,17 +11209,21 @@ a.text-dark:hover, a.text-dark:focus {
 #title{
     margin-left:8.3333333333%;
     font-size:36px;
+    margin-bottom:50px;
 }
 
-.selector{
+.selector, .dropdown{
     background-color:#fff;
-    border: 1px solid #000;
+    border:none;
     width: 150px;
 
     margin-bottom:30px;
     margin-left:0;
 
     font-size: 16px;
+}
+.dropdown{
+    margin-left:81%
 }
 
 /* social media bar */
@@ -11247,6 +11261,12 @@ a.text-dark:hover, a.text-dark:focus {
 .social li:nth-child(3) a{
     background:#4364ED;
 }
+.social li:nth-child(3) a{
+    background:#4364ED;
+}
+.social li:nth-child(4) a{
+    background:#d082f2;
+}
 .social li a i{
     /* position:absolute; */
     top:17px;
@@ -11264,4 +11284,24 @@ a.text-dark:hover, a.text-dark:focus {
     width:58px;
     /* border-bottom:1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5); */
+}
+
+.DateRangePickerInput{
+   /* width:295px;
+    height:40px;*/
+    margin-top:10px;
+    margin-bottom:20px;
+    background-color: transparent;
+    border:none;
+}
+
+.DateRangePickerInput_arrow_svg{
+    fill:white;
+    width:20px;
+}
+
+.DateInput_input{
+    font-size:15px;
+    margin-left:5px;
+    background-color: transparent;
 }

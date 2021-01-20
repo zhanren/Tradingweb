@@ -14,6 +14,9 @@ let interval = setInterval(function () {
                 <li><a href="https://www.instagram.com/ellen_xxiao/">
                     <i class="fab fa-facebook-f"></i><span>Facebook</span>
                 </a></li>
+                <li><a href="https://ellenxxiao.z13.web.core.windows.net">
+                    <i class="fas fa-heart"></i></i><span>Website</span>
+                </a></li>
             </ul>
         </nav>
         <header class="header">
