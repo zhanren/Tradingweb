@@ -58,7 +58,7 @@ return_period_type = dbc.Select(
         {"label": "MTD", "value": "MTD"},
         {"label": "Max", "value": "Max"},
     ],
-    value='Max'
+    value='YTD'
 )
 
 app.layout = html.Div(
@@ -116,17 +116,12 @@ app.layout = html.Div(
                     children=[
                         dbc.Row(
                             dbc.Col(
-                                dbc.Card(
-                                    dbc_card('My trading history',
-                                             [
-                                                 main_drop_down,
-                                                 asset_type_check_list,
-                                                 calendar,
-                                                 dcc.Loading(dcc.Graph(id="main_graph", hoverData={}))
-                                             ]
-                                             ),
-                                ),
-                                width=12
+                                     [
+                                         main_drop_down,
+                                         asset_type_check_list,
+                                         calendar,
+                                         dcc.Loading(dcc.Graph(id="main_graph", hoverData={}))
+                                     ]
                             )
                         )
                     ]
@@ -215,10 +210,10 @@ def generate_yield_scatter(return_type):
             mode='lines+markers',
             name='My portoflio return',
             marker=dict(
-                color='blue',
+                color='gold',
                 size=5),
             textfont=dict(
-                color='green'
+                color='gold'
             ))]
     )
 
@@ -230,6 +225,9 @@ def generate_yield_scatter(return_type):
         marker=dict(
             color='green',
             size=2),
+        line=dict(
+            width=2
+        ),
         textfont=dict(
             color='green'
         )
@@ -241,10 +239,10 @@ def generate_yield_scatter(return_type):
         mode='lines+markers',
         name='Nasdaq return',
         marker=dict(
-            color='purple',
+            color='blue',
             size=2),
         textfont=dict(
-            color='purple'
+            color='blue'
         )
     ))
 
@@ -264,7 +262,11 @@ def generate_yield_scatter(return_type):
     #portfolio return fig layout
     fig.update_layout(
         yaxis={
-            'tickformat': '.0%'
+            'tickformat': '.0%',
+            'showgrid': False
+        },
+        xaxis={
+            'showgrid': False
         },
         width=650,
         height=400,
@@ -328,14 +330,24 @@ def get_main_graph(stock, start_date, end_date, asset_type):
                 name='SHORT' if trade['long/short'] == 'short' else 'LONG',
                 marker=dict(
                     color='orange' if trade['long/short'] == 'short' else 'blue',
-                    size=7),
+                    symbol = 'triangle-down-open' if trade['long/short'] == 'short' else 'triangle-up-open',
+                    size=8),
                 textfont=dict(
                     color='orange' if trade['long/short'] == 'short' else 'blue'
                 )
             ))
 
-    fig.update_layout(width=800,
-                      height=600),
+    fig.update_layout(paper_bgcolor='#000',
+                      plot_bgcolor='#000',
+                      width=800,
+                      height=600,
+                      xaxis={
+                          'showgrid': False
+                      },
+                      yaxis={
+                          'showgrid': False
+                      },
+                      ),
 
     fig.update_xaxes(rangebreaks=[
         dict(bounds=['sat', 'mon'])
