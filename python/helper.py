@@ -98,18 +98,20 @@ def get_current_holding(current_holding):
     for stock in current_holding:
         info = stock['ticker']
         symbol = info['symbol']
-        position = stock['position']
+        position = int(stock['position'])
         assetType = stock['assetType'].upper()
-        cost = stock['cost']
+        totalcost = stock['cost']
+        cost = round(float(stock['cost']) / position, 2)
         lastPrice = stock['lastPrice']
         marketValue = stock['marketValue']
-        unrealizedProfitLossRate = stock['unrealizedProfitLossRate']
-        positionProportion = stock['positionProportion']
+        unrealizedProfitLossRate = str(round(float(stock['unrealizedProfitLossRate']) * 100, 1)) + '%'
+        positionProportion = str(round(float(stock['positionProportion']) * 100, 1)) + '%'
 
         current_line = pd.Series([
             symbol,
             position,
             assetType,
+            totalcost,
             cost,
             lastPrice,
             marketValue,
@@ -125,13 +127,16 @@ def get_current_holding(current_holding):
             0: 'Company',
             1: 'Position',
             2: 'AssetType',
-            3: 'Cost',
-            4: 'Price',
-            5: 'MarketValue',
-            6: 'unrealizedProfitLossRate',
-            7: 'positionProportion',
+            3: 'Total Cost',
+            4: 'Cost Base',
+            5: 'Price',
+            6: 'MarketValue',
+            7: 'Unrealized Profit Loss Rate (%)',
+            8: 'Position Proportion (%)',
         }
     )
+
+    position_df.sort_values('Total Cost', ascending=False, inplace=True)
 
     return position_df
 
