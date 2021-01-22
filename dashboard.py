@@ -1,8 +1,9 @@
+import datetime
+
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-import datetime
 import pandas as pd
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
@@ -19,7 +20,7 @@ today = datetime.datetime.today()
 yield_rate_df = pd.read_csv('python/account_detail/yield_rate.csv')
 current_holding = pd.read_csv('python/account_detail/current_holding.csv')
 current_holding_stock = current_holding[current_holding.AssetType == 'STOCK'][
-    ['Company', 'Cost', 'Price', 'unrealizedProfitLossRate', 'positionProportion']]
+    ['Company', 'Cost Base', 'Price', 'Unrealized Profit Loss Rate (%)', 'Position Proportion (%)']]
 
 app = dash.Dash(__name__)
 
@@ -39,7 +40,7 @@ asset_type_check_list = dbc.RadioItems(
         {"label": "Show only stock trade", "value": 'STOCK'},
         {"label": "Show only option trade", "value": 'OPTION'},
         {"label": "Show both stock and option trade", "value": 'ALL'}],
-    value='ALL'
+    value='STOCK'
 )
 
 calendar = dcc.DatePickerRange(
@@ -81,8 +82,8 @@ app.layout = html.Div(
                         dbc_card('My current position',
                                  [dbc.Table.from_dataframe(
                                      current_holding_stock, striped=True, bordered=True, hover=True, size='sm'),
-                                     dcc.Graph(id='position_pie_chart',
-                                               className='pie_chart'),
+                                     # dcc.Graph(id='position_pie_chart',
+                                     #           className='pie_chart'),
                                  ]
                                  ),
                     ),
@@ -275,23 +276,26 @@ def generate_yield_scatter(return_type):
         width=650,
         height=400,
         paper_bgcolor='#000',
-        plot_bgcolor='#000'
+        plot_bgcolor='#000',
+        font_color='#fff'
     )
 
     return fig
 
 
-@app.callback(
-    Output('position_pie_chart', 'figure'),
-    [Input('date_picker_ranger', 'start_date'),
-     Input('date_picker_ranger', 'end_date')
-     ])
-def generate_position_pie(start_date, end_date):
-    fig = go.Figure(
-        data=[go.Pie(labels=current_holding_stock.Company, values=current_holding_stock.positionProportion, hole=0.4)]
-    )
-
-    return fig
+#
+#
+# @app.callback(
+#     Output('position_pie_chart', 'figure'),
+#     [Input('date_picker_ranger', 'start_date'),
+#      Input('date_picker_ranger', 'end_date')
+#      ])
+# def generate_position_pie(start_date, end_date):
+#     fig = go.Figure(
+#         data=[go.Pie(labels=current_holding_stock.Company, values=current_holding_stock.positionProportion, hole=0.4)]
+#     )
+#
+#     return fig
 
 
 @app.callback(
@@ -333,11 +337,11 @@ def get_main_graph(stock, start_date, end_date, asset_type):
                 hovertemplate=hovertemplate(trade),
                 name='SHORT' if trade['long/short'] == 'short' else 'LONG',
                 marker=dict(
-                    color='orange' if trade['long/short'] == 'short' else 'blue',
-                    symbol = 'triangle-down-open' if trade['long/short'] == 'short' else 'triangle-up-open',
+                    color='blue' if trade['long/short'] == 'short' else 'gold',
+                    symbol='triangle-down-open' if trade['long/short'] == 'short' else 'triangle-up-open',
                     size=8),
                 textfont=dict(
-                    color='orange' if trade['long/short'] == 'short' else 'blue'
+                    color='blue' if trade['long/short'] == 'short' else 'gold'
                 )
             ))
 
@@ -351,6 +355,8 @@ def get_main_graph(stock, start_date, end_date, asset_type):
                       yaxis={
                           'showgrid': False
                       },
+                      font_color='#fff',
+                      showlegend=False
                       ),
 
     fig.update_xaxes(rangebreaks=[
