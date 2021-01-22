@@ -66,7 +66,7 @@ app.layout = html.Div(
         dbc.Row(
             dbc.Col(
                 html.H1(config.name, id='title'),
-                width={'size': 11, 'offset': 1},
+                width={'size': 11, 'offset': 0},
             )
         ),
         dbc.Row(
@@ -112,7 +112,7 @@ app.layout = html.Div(
                 ]
             ),
                 dbc.Col(
-                    width={'size': 6, 'offset': 0},
+                    width={'size': 6, 'offset': 1},
                     children=[
                         dbc.Row(
                             dbc.Col(
@@ -210,10 +210,14 @@ def generate_yield_scatter(return_type):
             mode='lines+markers',
             name='My portoflio return',
             marker=dict(
-                color='gold',
+                color='#FEDE61',
                 size=5),
+            line=dict(
+                width=3
+            ),
             textfont=dict(
-                color='gold'
+                color='gold',
+                family='Poor Story'
             ))]
     )
 
@@ -223,7 +227,7 @@ def generate_yield_scatter(return_type):
         mode='lines+markers',
         name='Dow&Jones return',
         marker=dict(
-            color='green',
+            color='#20EBB4',
             size=2),
         line=dict(
             width=2
@@ -239,7 +243,7 @@ def generate_yield_scatter(return_type):
         mode='lines+markers',
         name='Nasdaq return',
         marker=dict(
-            color='blue',
+            color='#78E7F5',
             size=2),
         textfont=dict(
             color='blue'
@@ -252,7 +256,7 @@ def generate_yield_scatter(return_type):
         mode='lines+markers',
         name='S&P500 return',
         marker=dict(
-            color='red',
+            color='#F51B74',
             size=2),
         textfont=dict(
             color='red'

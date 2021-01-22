@@ -11213,15 +11213,27 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .selector, .dropdown{
-    background-color:#fff;
+/*    background-color:#fff;
     border:none;
-    width: 150px;
+    width: 150px;*/
+    color:#fff;
 
     margin-bottom:30px;
     margin-left:0;
 
     font-size: 16px;
+
+    width: 187px;
+    height: 42px;
+    left: 101px;
+    top: 104px;
+
+    background: #111;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(136, 123, 132, 0.5), inset -1px 1px 2px rgba(136, 123, 132, 0.2), inset 1px -1px 2px rgba(136, 123, 132, 0.2), inset -1px -1px 2px rgba(255, 255, 255, 0.9), inset 1px 1px 3px rgba(136, 123, 132, 0.9);
+    border-radius: 15px;
 }
+
+
 .dropdown{
     margin-left:81%
 }
