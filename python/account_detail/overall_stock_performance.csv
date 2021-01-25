@@ -1,21 +1,21 @@
 ,Company,Symbol,Profit
-0,NIO Inc.,NIO,27351.13
+0,NIO Inc.,NIO,28394.76
 1,Lakeland Ind,LAKE,7261.79
 2,Moderna,MRNA,5823.10
-3,Revolve Group,RVLV,4653.60
-4,TELADOC HEALTH,TDOC,3384.33
-5,Sunrun,RUN,2976.31
-6,Uber,UBER,2736.16
-7,JD.com,JD,2293.92
-8,Chewy,CHWY,1964.64
-9,Innovative Indl,IIPR,1844.09
-10,Palantir Technologies Inc.,PLTR,1719.62
+3,TELADOC HEALTH,TDOC,5264.14
+4,Palantir Technologies Inc.,PLTR,5035.61
+5,Revolve Group,RVLV,4653.60
+6,Sunrun,RUN,2979.87
+7,Uber,UBER,2736.16
+8,JD.com,JD,2184.92
+9,Chewy,CHWY,1964.64
+10,Innovative Indl,IIPR,1663.59
 11,UP Fintech Holding,TIGR,1660.57
 12,Sealed Air,SEE,1536.26
 13,AMD,AMD,1295.22
 14,Netflix,NFLX,1274.11
 15,"Lemonade, Inc.",LMND,1180.25
-16,KE Holdings Inc.,BEKE,1051.70
+16,KE Holdings Inc.,BEKE,1104.20
 17,REYNOLDS CONSUMER PRODUCTS INC.,REYN,958.90
 18,XPENG INC.,XPEV,871.12
 19,Rocket Companies,RKT,818.78
@@ -27,12 +27,12 @@
 25,Zynga,ZNGA,384.56
 26,Southwest,LUV,349.02
 27,MGM Resorts Intl,MGM,335.83
-28,Switchback Energy Acquisition Corp,SBE,263.42
-29,2U Inc,TWOU,261.24
-30,Delta Air,DAL,244.56
-31,ProShares Ultra VIX Short-Term Futures,UVXY,214.39
-32,Pinduoduo,PDD,210.77
-33,Amazon.com,AMZN,209.99
+28,ProShares Ultra VIX Short-Term Futures,UVXY,265.95
+29,Switchback Energy Acquisition Corp,SBE,263.42
+30,2U Inc,TWOU,261.24
+31,Amazon.com,AMZN,260.76
+32,Delta Air,DAL,244.56
+33,Pinduoduo,PDD,210.77
 34,ProShares UltraPro QQQ,TQQQ,202.81
 35,Boeing,BA,194.54
 36,Carnival,CCL,191.06
@@ -40,68 +40,71 @@
 38,Fiverr,FVRR,165.93
 39,ProShares UltraPro Short Dow30,SDOW,162.61
 40,"Tattooed Chef, Inc.",TTCF,139.63
-41,GSX Techedu,GSX,108.26
-42,Nvidia,NVDA,107.22
-43,WHITING PETROLM WT A,WLLAW,106.58
-44,GrubHub,GRUB,106.44
-45,Nordstrom,JWN,104.61
-46,Macy's,M,86.44
-47,Unity Software Inc.,U,69.44
-48,Equity Resident,EQR,68.31
-49,Fastly,FSLY,60.58
-50,Johnson&Johnson,JNJ,59.76
-51,WHITING PETROLM WT B,WLLBW,56.40
-52,fuboTV Inc.,FUBO,49.88
-53,Frontline,FRO,41.75
-54,Dominion Inc,D,24.40
-55,Alphabet,GOOG,24.03
-56,American Express,AXP,19.78
-57,Ford Motor,F,16.85
-58,PepsiCo,PEP,14.90
-59,ProShares UltraPro Short QQQ,SQQQ,13.82
-60,Shopify,SHOP,11.95
-61,QuantumScape Corp,QS,10.11
-62,Raytheon Technologies Corporation,RTX,9.69
-63,PURPLE INNOVATIO,PRPL,9.08
-64,AT&T,T,7.19
-65,Salesforce.com,CRM,7.05
-66,NORTHERN STAR,STIC,-6.00
-67,Western Digital,WDC,-7.98
-68,PulteGroup,PHM,-14.25
-69,Trident Acquisitions,TDAC,-26.00
-70,"IQIYI, INC.",IQ,-41.93
-71,Overstock com,OSTK,-48.54
-72,iShares Silver Trust,SLV,-49.97
-73,Beyond Meat,BYND,-50.21
-74,Peloton Interactive Inc,PTON,-52.04
-75,Cinemark Hldgs,CNK,-63.03
-76,Jumia,JMIA,-75.06
-77,TripAdvisor,TRIP,-83.80
-78,Workhorse Group,WKHS,-139.83
-79,Nikola Corporation,NKLA,-150.44
-80,Activision,ATVI,-168.42
-81,Pfizer,PFE,-170.49
-82,Tencent Music,TME,-172.10
-83,Opendoor Technologies Inc,OPEN,-177.34
-84,GM,GM,-194.84
-85,Visa,V,-203.34
-86,Lufax Holding Ltd,LU,-227.92
-87,Hertz Glo Hldg,HTZGQ,-230.64
-88,JFrog Ltd,FROG,-232.73
-89,American Airlines,AAL,-265.54
-90,Nordic Amer Tank,NAT,-298.28
-91,Walt Disney,DIS,-330.41
-92,CarGurus,CARG,-331.50
-93,Gilead Sciences,GILD,-447.27
-94,Carvana,CVNA,-500.07
-95,ZOOM VIDEO,ZM,-530.06
-96,Momo,MOMO,-577.93
-97,DraftKings Inc,DKNG,-656.01
-98,SPDR® S&P 500 ETF Trust,SPY,-726.48
-99,DOUYU,DOYU,-734.58
-100,Whiting Petrol,WLL,-959.82
-101,Alibaba,BABA,-1034.33
-102,TESLA,TSLA,-1065.97
-103,Dominos Pizza,DPZ,-1437.78
-104,Hyliion Holdings Corporation,HYLN,-2753.69
-105,Wayfair,W,-3800.82
+41,"Affirm Holdings, Inc.",AFRM,119.90
+42,GSX Techedu,GSX,108.26
+43,Nvidia,NVDA,107.22
+44,WHITING PETROLM WT A,WLLAW,106.58
+45,GrubHub,GRUB,106.44
+46,Nordstrom,JWN,104.61
+47,Macy's,M,86.44
+48,Unity Software Inc.,U,69.44
+49,Equity Resident,EQR,68.31
+50,Vivint Smart Home Inc,VVNT,62.00
+51,Fastly,FSLY,60.58
+52,Johnson&Johnson,JNJ,59.76
+53,WHITING PETROLM WT B,WLLBW,56.40
+54,fuboTV Inc.,FUBO,49.88
+55,Frontline,FRO,41.75
+56,Trident Acquisitions,TDAC,28.92
+57,Dominion Inc,D,24.40
+58,Alphabet,GOOG,24.03
+59,American Express,AXP,19.78
+60,Salesforce.com,CRM,16.90
+61,Ford Motor,F,16.85
+62,PepsiCo,PEP,14.90
+63,ProShares UltraPro Short QQQ,SQQQ,13.82
+64,Shopify,SHOP,11.95
+65,Raytheon Technologies Corporation,RTX,9.69
+66,PURPLE INNOVATIO,PRPL,9.08
+67,AT&T,T,7.19
+68,Snowflake Inc,SNOW,-0.10
+69,Western Digital,WDC,-7.98
+70,PulteGroup,PHM,-14.25
+71,QuantumScape Corp,QS,-34.59
+72,"IQIYI, INC.",IQ,-41.93
+73,Overstock com,OSTK,-48.54
+74,iShares Silver Trust,SLV,-49.97
+75,Beyond Meat,BYND,-50.21
+76,Peloton Interactive Inc,PTON,-52.04
+77,NORTHERN STAR,STIC,-58.00
+78,Cinemark Hldgs,CNK,-63.03
+79,Jumia,JMIA,-75.06
+80,TripAdvisor,TRIP,-83.80
+81,Workhorse Group,WKHS,-139.83
+82,Nikola Corporation,NKLA,-150.44
+83,Activision,ATVI,-168.42
+84,Pfizer,PFE,-170.49
+85,Tencent Music,TME,-172.10
+86,Opendoor Technologies Inc,OPEN,-177.34
+87,GM,GM,-194.84
+88,Visa,V,-203.34
+89,Lufax Holding Ltd,LU,-227.92
+90,Hertz Glo Hldg,HTZGQ,-230.64
+91,JFrog Ltd,FROG,-232.73
+92,American Airlines,AAL,-265.54
+93,Nordic Amer Tank,NAT,-298.28
+94,Walt Disney,DIS,-330.41
+95,CarGurus,CARG,-331.50
+96,Gilead Sciences,GILD,-447.27
+97,Carvana,CVNA,-500.07
+98,ZOOM VIDEO,ZM,-530.06
+99,Momo,MOMO,-577.93
+100,DraftKings Inc,DKNG,-656.01
+101,SPDR® S&P 500 ETF Trust,SPY,-726.48
+102,DOUYU,DOYU,-734.58
+103,Whiting Petrol,WLL,-959.82
+104,Alibaba,BABA,-1034.33
+105,TESLA,TSLA,-1065.97
+106,Dominos Pizza,DPZ,-1437.78
+107,Hyliion Holdings Corporation,HYLN,-2753.69
+108,Wayfair,W,-3800.82

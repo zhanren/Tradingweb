@@ -1,0 +1,16 @@
+stock_performance:
+  monthly: True
+  weekly: True
+  overall: True
+
+profit_loss_history: True
+
+yield_rate:
+  my_portofolio: True
+  dia: True
+  ixic: True
+  spy: True
+
+net_liquidity: True
+
+current_holding: True
