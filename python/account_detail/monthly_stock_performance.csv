@@ -1,27 +1,28 @@
 ,Company,Symbol,Profit
-0,TELADOC HEALTH,TDOC,6054.30
-1,Palantir Technologies Inc.,PLTR,4500.97
-2,Sunrun,RUN,1990.94
-3,NIO Inc.,NIO,1980.32
-4,JD.com,JD,1459.57
+0,TELADOC HEALTH,TDOC,8437.99
+1,Palantir Technologies Inc.,PLTR,5456.98
+2,Sunrun,RUN,1911.14
+3,JD.com,JD,1775.27
+4,NIO Inc.,NIO,1661.02
 5,UP Fintech Holding,TIGR,1159.16
-6,KE Holdings Inc.,BEKE,1109.20
-7,Innovative Indl,IIPR,696.85
+6,Innovative Indl,IIPR,977.85
+7,KE Holdings Inc.,BEKE,638.47
 8,Uber,UBER,554.48
-9,Amazon.com,AMZN,187.36
-10,"Tattooed Chef, Inc.",TTCF,139.63
-11,ProShares Ultra VIX Short-Term Futures,UVXY,120.76
-12,"Affirm Holdings, Inc.",AFRM,119.90
+9,ProShares Ultra VIX Short-Term Futures,UVXY,202.22
+10,Amazon.com,AMZN,187.36
+11,"Tattooed Chef, Inc.",TTCF,139.63
+12,GameStop,GME,124.11
 13,Nvidia,NVDA,107.22
-14,Trident Acquisitions,TDAC,80.92
-15,Vivint Smart Home Inc,VVNT,62.00
-16,Salesforce.com,CRM,16.20
-17,Snowflake Inc,SNOW,-0.10
-18,QuantumScape Corp,QS,-34.59
-19,NORTHERN STAR,STIC,-58.00
-20,ProShares UltraPro Short QQQ,SQQQ,-58.03
-21,JFrog Ltd,FROG,-124.71
-22,Lufax Holding Ltd,LU,-159.14
-23,Opendoor Technologies Inc,OPEN,-177.34
+14,"Affirm Holdings, Inc.",AFRM,90.91
+15,Trident Acquisitions,TDAC,80.92
+16,Salesforce.com,CRM,27.90
+17,Vivint Smart Home Inc,VVNT,8.94
+18,Snowflake Inc,SNOW,-16.00
+19,QuantumScape Corp,QS,-34.59
+20,JFrog Ltd,FROG,-124.71
+21,Lufax Holding Ltd,LU,-159.14
+22,Opendoor Technologies Inc,OPEN,-177.34
+23,NORTHERN STAR,STIC,-300.00
 24,Hyliion Holdings Corporation,HYLN,-318.46
-25,Rocket Companies,RKT,-422.62
+25,Rocket Companies,RKT,-427.47
+26,ProShares UltraPro Short QQQ,SQQQ,-461.26

@@ -1,6 +1,6 @@
 import os
 
-## App settings
+## App conf
 name = "Trading Dashboard"
 
 host = "0.0.0.0"

@@ -1,3 +1,5 @@
+# @package _group_
+
 stock_performance:
   monthly: True
   weekly: True
@@ -5,8 +7,10 @@ stock_performance:
 
 profit_loss_history: True
 
+trading_history: True
+
 yield_rate:
-  my_portofolio: True
+  my_portfolio: True
   dia: True
   ixic: True
   spy: True

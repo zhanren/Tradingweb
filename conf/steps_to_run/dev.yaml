@@ -1,2 +1,4 @@
+# @package _group_
+
 download_data: True
 run_dashboard: False

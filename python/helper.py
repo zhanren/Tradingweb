@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def get_trading_history(orders):
     trading_history = pd.DataFrame()
 

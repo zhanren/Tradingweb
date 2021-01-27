@@ -8,10 +8,10 @@ import pandas as pd
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 
+from python import config
 from python.Stock_history import get_stock_history
 from python.component import hovertemplate, dbc_card
 from python.helper import get_history_stock_ticker
-from settings import config
 
 ####get all needed data###
 orders = pd.read_csv('python/account_detail/historical_order.csv')
@@ -19,7 +19,8 @@ trading_tickers = get_history_stock_ticker(orders)
 today = datetime.datetime.today()
 yield_rate_df = pd.read_csv('python/account_detail/yield_rate.csv')
 current_holding = pd.read_csv('python/account_detail/current_holding.csv')
-current_holding_stock = current_holding[current_holding.AssetType == 'STOCK'][
+current_holding_stock = \
+current_holding[current_holding.Date == today.strftime('%Y-%m-%d')][current_holding.AssetType == 'STOCK'][
     ['Company', 'Cost Base', 'Price', 'Unrealized Profit Loss Rate (%)', 'Position Proportion (%)']]
 
 app = dash.Dash(__name__)

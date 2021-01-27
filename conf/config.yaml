@@ -1,7 +1,7 @@
 defaults:
   - account_info: dev
-  - download_data: dev
-  #  - run_dashboard: dev
+  - download_steps: dev
+  - run_dashboard: dev
   - steps_to_run: dev
 
 
